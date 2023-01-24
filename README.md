@@ -5,7 +5,6 @@
 Web Application Development (01076119) Computer Engineering, KMITL<br>
 
 ## List for All Chapters
-+ HTML and CSS
-  - Exercise 1
-  - Exercise 2
++ Exercise 1 (HTML)
+  - <a href="./exercise-01">item 1<a/>
 + Coming soon...
