@@ -8,4 +8,7 @@ Web Application Development (01076119) Computer Engineering, KMITL<br>
 + Exercise 1 (HTML)
   - <a href="./exercise-01/item_1.html">item 1<a/>
   - <a href="./exercise-01/item_2.html">item 2<a/>
+ + Exercise 2 (CSS)
+  - <a href="./exercise-02/item_1.html">item 1<a/>
+  - <a href="./exercise-02/item_1.html">item 2<a/>
 + Coming soon...
