@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      html::-webkit-scrollbar {
+        display: none;
+      }
+      html {
+        scrollbar-width: none;
+      }
+      nav {
+        background-color: #03001c;
+        border-bottom: 1px solid #301e67;
+      }
+      .nav {
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+      }
+
+      nav .navbar-collapse ul li a {
+        color: white;
+      }
+      nav .navbar-collapse ul li a:hover {
+        color: #b6eada;
+      }
+      nav .navbar-collapse ul li {
+        padding-left: 2%;
+      }
+
+      .nav-logo {
+        color: white;
+      }
+      .nav-logo:hover {
+        color: #b6eada;
+      }
+      .nav-span {
+        display: inline;
+        width: 2.4rem;
+      }
+      .body {
+        background-color: #03001c;
+      }
+      .space-box {
+        display: block;
+        height: 6rem;
+        visibility: hidden;
+      }
+
+      .home {
+        height: 100vh;
+        border-bottom: 1px solid #301e67;
+      }
+      body {
+        color: white;
+        background-color: #03001c;
+      }
+      body div div h1 {
+        font-size: 6rem;
+        text-transform: uppercase;
+        background: linear-gradient(to right, #5b8fb9 0%, #b6eada 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      body div div h2 {
+        font-size: 1.5rem;
+        opacity: 50%;
+      }
+      .github-btn {
+        width: 10rem;
+        cursor: pointer;
+        background-color: #e5e7ea;
+        border: 1px solid #e5e7ea;
+        border-radius: 0.5rem;
+        color: #000;
+        padding: 0.75rem 2rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+      }
+      .github-btn:hover {
+        width: 10rem;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid #e5e7ea;
+        border-radius: 0.5rem;
+        color: #e5e7ea;
+        padding: 0.75rem 2rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+      }
+      .linkedin-btn {
+        width: 10rem;
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid #5b9def;
+        border-radius: 0.5rem;
+        color: #5b9def;
+        padding: 0.75rem 2rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+      }
+      .linkedin-btn:hover {
+        width: 10rem;
+        cursor: pointer;
+        background-color: #5d6af2;
+        border: 1px solid #e5e7ea;
+        border-radius: 0.5rem;
+        color: #e5e7ea;
+        padding: 0.75rem 2rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+      }
+      .nav-hamb {
+        position: absolute;
+        top: 1.3rem;
+        right: 2rem;
+      }
+      @media (max-width: 768px) {
+        .navbar-collapse {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+        .space-box {
+          display: block;
+          height: 4rem;
+          visibility: hidden;
+        }
+        body div div h1 {
+          font-size: 3.3rem;
+          text-transform: uppercase;
+          background: linear-gradient(to right, #5b8fb9 0%, #b6eada 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        body div div h2 {
+          font-size: 1rem;
+          opacity: 50%;
+        }
+      }
+    </style>
+    <title>Bourbxn - Personal Website</title>
+  </head>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid nav">
+        <a class="navbar-brand nav-logo" href="#">Bourbxn</a>
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            class="nav-hamb"
+            width="31px"
+            height="31px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#000000"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <g id="SVGRepo_iconCarrier">
+              <g clip-path="url(#clip0_429_11066)">
+                <path
+                  d="M3 6.00092H21M3 12.0009H21M3 18.0009H21"
+                  stroke="#ffffff"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_429_11066">
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    transform="translate(0 0.000915527)"
+                  />
+                </clipPath>
+              </defs>
+            </g>
+          </svg>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <span class="nav-span"></span>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <span class="space-box"></span>
+    <!--Home-->
+    <div
+      class="px-4 hero mb-5 d-flex align-items-center justify-content-center home"
+    >
+      <div class="page-header text-center">
+        <h1 class="fw-bold mb-0">JAKKAPAT P.</h1>
+        <h2 class="fw-light mt-3 mb-5" id="header2">
+          I'm a passionate full-stack developer
+        </h2>
+        <div
+          class="d-flex flex-md-row flex-column align-items-center justify-content-center gap-4 contact"
+        >
+          <a
+            class="github-btn fw-bold"
+            href="https://github.com/Bourbxn"
+            target="_blank"
+          >
+            <svg
+              class="mb-1"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 496 512"
+              width="1em"
+              height="1em"
+            >
+              <path
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+              ></path>
+            </svg>
+            <span>Github</span>
+          </a>
+          <a
+            class="linkedin-btn fw-bold"
+            href="https://www.linkedin.com/"
+            target="_blank"
+          >
+            <svg
+              class="mb-1"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              width="1em"
+              height="1em"
+            >
+              <path
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+              ></path>
+            </svg>
+            <span>Linkedln</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--Article-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h3>WHO WE ARE</h3>
+          <p class="lead">
+            A growing company who strive to deliver industry-standard quality
+            within acceptable time and budget.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 my-4">
+          <h4>Enterprise Security</h4>
+          <p>
+            Duo alii civibus nostrum eu. Appetere vulputate no vim, ad usu nihil
+            assueverit, suscipit ponderum posidonium mea ea. Ne eam malis
+            percipit, sonet ludus eum eu. Causae latine scripta cu sed, vis
+            sensibus adipiscing persequeris ea, eros eripuit concludaturque in
+            per
+          </p>
+        </div>
+        <div class="col-sm-6 my-4">
+          <h4>Storage Solution</h4>
+          <p>
+            Duo alii civibus nostrum eu. Appetere vulputate no vim, ad usu nihil
+            assueverit, suscipit ponderum posidonium mea ea. Ne eam malis
+            percipit, sonet ludus eum eu. Causae latine scripta cu sed, vis
+            sensibus adipiscing persequeris ea, eros eripuit concludaturque in
+            per
+          </p>
+        </div>
+        <div class="col-sm-6 my-4">
+          <h4>Document Management</h4>
+          <p>
+            Duo alii civibus nostrum eu. Appetere vulputate no vim, ad usu nihil
+            assueverit, suscipit ponderum posidonium mea ea. Ne eam malis
+            percipit, sonet ludus eum eu. Causae latine scripta cu sed, vis
+            sensibus adipiscing persequeris ea, eros eripuit concludaturque in
+            per
+          </p>
+        </div>
+        <div class="col-sm-6 my-4">
+          <h4>Control Management</h4>
+          <p>
+            Duo alii civibus nostrum eu. Appetere vulputate no vim, ad usu nihil
+            assueverit, suscipit ponderum posidonium mea ea. Ne eam malis
+            percipit, sonet ludus eum eu. Causae latine scripta cu sed, vis
+            sensibus adipiscing persequeris ea, eros eripuit concludaturque in
+            per
+          </p>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-lg-4 mb-4 ps-3 ps-3">
+          <svg
+            class="bd-placeholder-img rounded-circle"
+            width="140"
+            height="140"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            role="img"
+            aria-label="Placeholder: 140x140"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777"></rect>
+            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+          </svg>
+          <h4 class="pt-1">Heading</h4>
+          <p>
+            Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
+            Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo
+            risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
+            cursus magna.
+          </p>
+          <button type="button" class="btn btn-secondary">
+            View details &#187;
+          </button>
+        </div>
+
+        <div class="col-lg-4 mb-4 ps-3 ps-3">
+          <svg
+            class="bd-placeholder-img rounded-circle"
+            width="140"
+            height="140"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            role="img"
+            aria-label="Placeholder: 140x140"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777"></rect>
+            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+          </svg>
+          <h4 class="pt-1">Heading</h4>
+          <p>
+            Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
+            Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo
+            risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
+            cursus magna.
+          </p>
+          <button type="button" class="btn btn-secondary">
+            View details &#187;
+          </button>
+        </div>
+        <div class="col-lg-4 mb-4 ps-3 ps-3">
+          <svg
+            class="bd-placeholder-img rounded-circle"
+            width="140"
+            height="140"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            role="img"
+            aria-label="Placeholder: 140x140"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777"></rect>
+            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+          </svg>
+          <h4 class="pt-1">Heading</h4>
+          <p>
+            Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
+            Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo
+            risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
+            cursus magna.
+          </p>
+          <button type="button" class="btn btn-secondary">
+            View details &#187;
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</html>
