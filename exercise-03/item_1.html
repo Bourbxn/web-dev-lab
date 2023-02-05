@@ -19,7 +19,19 @@
       }
       nav {
         background-color: #03001c;
-        border-bottom: 1px solid #301e67;
+        border-bottom: 2px solid #301e67;
+      }
+      .footer-link {
+        color: white;
+        text-decoration: inherit;
+      }
+      .footer-link:hover {
+        color: white;
+        text-decoration: inherit;
+      }
+      .footer-link:active {
+        color: white;
+        text-decoration: inherit;
       }
       .nav {
         padding-left: 10%;
@@ -27,12 +39,12 @@
         padding-top: 1%;
         padding-bottom: 1%;
       }
-
       nav .navbar-collapse ul li a {
         color: white;
       }
       nav .navbar-collapse ul li a:hover {
         color: #b6eada;
+        transition-duration: 1000ms;
       }
       nav .navbar-collapse ul li {
         padding-left: 2%;
@@ -42,6 +54,7 @@
       }
       .nav-logo:hover {
         color: #b6eada;
+        transition-duration: 1000ms;
       }
       .nav-span {
         display: inline;
@@ -50,23 +63,41 @@
       .anchor {
         display: block;
         position: relative;
-        top: -95px;
+        top: -85px;
         visibility: hidden;
       }
-      .home {
-        height: 100vh;
+      .layout-dark {
+        min-height: 100vh;
         background-color: #03001c;
       }
-      .about-me {
-        min-height: 90vh;
+      .layout-light {
+        min-height: 100vh;
         background-color: #e5e7ea;
+      }
+      .box-dark {
+        background-color: #03001c;
+        padding: 3rem;
+      }
+      .box-light {
+        background-color: #e5e7ea;
+        padding: 3rem;
       }
       .home-name {
         font-size: 6rem;
         text-transform: uppercase;
         background: linear-gradient(to right, #5b8fb9 0%, #b6eada 100%);
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
+      }
+      .project-card {
+        background-color: white;
+        height: 10rem;
+        border-radius: 1rem;
+      }
+      .project-card:hover {
+        transform: scale(1.05);
+        transition-duration: 500ms;
       }
       .github-btn {
         width: 10rem;
@@ -82,17 +113,10 @@
         font-size: 1rem;
       }
       .github-btn:hover {
-        width: 10rem;
-        cursor: pointer;
         background-color: transparent;
         border: 1px solid #e5e7ea;
-        border-radius: 0.5rem;
         color: #e5e7ea;
-        padding: 0.75rem 2rem;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 1rem;
+        transition-duration: 500ms;
       }
       .linkedin-btn {
         width: 10rem;
@@ -108,30 +132,56 @@
         font-size: 1rem;
       }
       .linkedin-btn:hover {
-        width: 10rem;
-        cursor: pointer;
         background-color: #5d6af2;
         border: 1px solid #e5e7ea;
         border-radius: 0.5rem;
         color: #e5e7ea;
-        padding: 0.75rem 2rem;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 1rem;
+        transition-duration: 500ms;
       }
-
+      .about-prof {
+        width: 20rem;
+        border-radius: 1rem;
+      }
+      .about-header {
+        padding-top: 4rem;
+        padding-bottom: 5rem;
+      }
+      .proj-git {
+        fill: black;
+      }
+      .proj-git:hover {
+        fill: #e5e7ea;
+        transition-duration: 500ms;
+      }
+      .proj-web:hover {
+        filter: opacity(8%);
+        transition-duration: 500ms;
+      }
+      .work-logo {
+        width: 2.7rem;
+        filter: invert(1);
+        padding-bottom: 0.5rem;
+      }
+      .footer {
+        background-color: #301e67;
+        padding-top: 4.5rem;
+        padding-bottom: 2.4rem;
+      }
+      .footer-point{
+        font-size: 0.7rem;
+        opacity: 50%;
+      }
       @media (max-width: 768px) {
         .navbar-collapse {
           padding-top: 1rem;
           padding-bottom: 1rem;
         }
-
         .home-name {
           font-size: 3.3rem;
           text-transform: uppercase;
           background: linear-gradient(to right, #5b8fb9 0%, #b6eada 100%);
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
         }
         .nav {
@@ -139,6 +189,14 @@
           padding-right: 5%;
           padding-top: 1%;
           padding-bottom: 1%;
+        }
+        .about-prof {
+          width: 15rem;
+          border-radius: 50%;
+        }
+        .about-header {
+          padding-top: 3rem;
+          padding-bottom: 2rem;
         }
       }
     </style>
@@ -233,7 +291,7 @@
   <body>
     <!--Home-->
     <div
-      class="px-4 hero d-flex align-items-center justify-content-center home"
+      class="px-4 hero d-flex align-items-center justify-content-center layout-dark"
     >
       <div class="page-header text-center">
         <h1 class="fw-bold mb-0 home-name">JAKKAPAT P.</h1>
@@ -291,14 +349,11 @@
         </div>
       </div>
     </div>
-
     <!--About Me-->
+    <span id="about" class="anchor"></span>
     <div id="about" class="container-fluid" style="background-color: #e5e7ea">
-      <div class="about-me container">
-        <h1
-          class="text-center fw-bold"
-          style="padding-top: 5rem; padding-bottom: 5rem"
-        >
+      <div class="layout-light container">
+        <h1 class="text-center fw-bold about-header">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="40"
@@ -316,11 +371,12 @@
         <div
           class="d-flex flex-md-row flex-column container-fluid align-items-center justify-content-center gap-4 pb-5"
         >
-          <img
-            src="https://img.iir.cz/userimages/news_main/2204/3456_7c850f42a0a465788349ca824c57509b_large.jpg"
-            style="width: 20rem; height: 20rem; border-radius: 1rem"
-            class="p-md-5"
-          />
+          <div class="p-md-5">
+            <img
+              src="https://sv1.picz.in.th/images/2023/02/05/LRxiBz.jpg"
+              class="about-prof shadow"
+            />
+          </div>
           <div
             class="p-md-5 p-4 w-100 shadow"
             style="
@@ -329,15 +385,726 @@
               border-radius: 1rem;
             "
           >
-            I'm a computer engineering student at KMITL. I would like to improve
-            my overall skills in programming. To be a great developer, I am
-            determined and willing to learn new things all the time and be able
-            to contribute to others by using my experience from KMITL and
-            previous.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem,
+            incidunt at sint voluptates, nisi hic quia, doloribus in et magnam
+            velit. Velit itaque libero ducimus quasi ipsum placeat! Vitae,
+            velit! Assumenda voluptatibus ipsam molestias itaque. Quae deleniti
+            maiores accusantium a culpa iste. Dolore ipsa deserunt nemo natus,
+            facilis, autem blanditiis, quaerat neque id odio harum! Perferendis
+            nihil asperiores expedita architecto! Soluta nihil aperiam facere,
+            labore eos iusto beatae consequatur, molestias sapiente in quibusdam
+            ex debitis earum perspiciatis veritatis excepturi! Culpa et vitae
+            eligendi esse ea ipsam laborum modi necessitatibus nemo. Nam, veniam
+            accusantium sint distinctio officia odit natus! Consequuntur maiores
+            dolores nemo ullam quia quae officiis sit natus possimus
+            repudiandae, inventore, quod consectetur at voluptatum sapiente quos
+            eveniet laboriosam esse.
           </div>
         </div>
       </div>
     </div>
+
+    <!--Skills-->
+    <span id="skills" class="anchor"></span>
+    <div id="skills" class="container-fluid box-dark">
+      <div class="layout-dark container">
+        <h1 class="text-center fw-bold about-header text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-bullseye"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            ></path>
+            <path
+              d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+            ></path>
+            <path
+              d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+            ></path>
+            <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+          </svg>
+          Skills
+        </h1>
+        <!--Programming Languages-->
+        <div
+          class="container w-100 p-4 shadow mb-5"
+          style="background-color: white; border-radius: 1rem"
+        >
+          <h2 class="text-whtie text-center mb-4">Programming Languages</h2>
+          <div
+            class="d-flex flex-md-row flex-column align-content-center justify-content-center gap-3"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg"
+              alt="C logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg"
+              alt="C++ logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Python_logo_01.svg"
+              alt="Python logo"
+              style="width: 4rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src=" https://cdn.freebiesupply.com/logos/large/2x/java-4-logo-png-transparent.png"
+              alt="Java logo"
+              style="width: 2.7rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="html5 logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              alt="css3 logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JS logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+              alt="TS logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+              alt="golang logo"
+              style="width: 5rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+          </div>
+        </div>
+        <!--Frameworks & Libs-->
+        <div
+          class="container w-100 p-4 shadow mb-5"
+          style="background-color: white; border-radius: 1rem"
+        >
+          <h2 class="text-whtie text-center mb-4">Frameworks & Libraries</h2>
+          <div
+            class="d-flex flex-md-row flex-column align-content-center justify-content-center gap-3"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+              alt="React logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src=" https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+              alt="Next logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png"
+              alt="Bootstrap logo"
+              style="height: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png"
+              alt="Tailwindcss logo"
+              style="height: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+              alt="Node logo"
+              style="height: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+          </div>
+        </div>
+        <!--Tools-->
+        <div
+          class="container w-100 p-4 shadow mb-5"
+          style="background-color: white; border-radius: 1rem"
+        >
+          <h2 class="text-whtie text-center mb-4">Programming Tools</h2>
+          <div
+            class="d-flex flex-md-row flex-column align-content-center justify-content-center gap-3"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+              alt="Linux logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+              alt="Git logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/1022px-Vimlogo.svg.png"
+              alt="Vim logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+          </div>
+        </div>
+        <!--Other Tools-->
+        <div
+          class="container w-100 p-4 shadow mb-5"
+          style="background-color: white; border-radius: 1rem"
+        >
+          <h2 class="text-whtie text-center mb-4">Other Tools</h2>
+          <div
+            class="d-flex flex-md-row flex-column align-content-center justify-content-center gap-3"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg/1200px-Microsoft_Office_logo_%282019%E2%80%93present%29.svg.png"
+              alt="Office logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1051px-Adobe_Photoshop_CC_icon.svg.png"
+              alt="Photoshop logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg/1200px-Adobe_Photoshop_Lightroom_CC_logo.svg.png"
+              alt="Lightroom logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/2101px-Adobe_Premiere_Pro_CC_icon.svg.png"
+              alt="Premierpro logo"
+              style="width: 3rem"
+              class="mx-auto mx-md-3 md-my-0 my-2"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Education-->
+    <span id="education" class="anchor"></span>
+    <div
+      id="education"
+      class="container-fluid"
+      style="background-color: #e5e7ea"
+    >
+      <div class="layout-light container">
+        <h1 class="text-center fw-bold about-header">
+          <svg
+            width="3rem"
+            height="3rem"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M22 4.66994V16.74C22 17.7 21.22 18.5999 20.26 18.7199L19.93 18.76C17.75 19.05 14.39 20.1599 12.47 21.2199C12.21 21.3699 11.78 21.3699 11.51 21.2199L11.47 21.2C9.54997 20.15 6.20003 19.05 4.03003 18.76L3.73999 18.7199C2.77999 18.5999 2 17.7 2 16.74V4.65993C2 3.46993 2.96997 2.56994 4.15997 2.66994C6.25997 2.83994 9.43997 3.89997 11.22 5.00997L11.47 5.15993C11.76 5.33994 12.24 5.33994 12.53 5.15993L12.7 5.04995C13.33 4.65995 14.13 4.26994 15 3.91994V7.99996L17 6.66994L19 7.99996V2.77999C19.27 2.72999 19.53 2.69995 19.77 2.67995H19.83C21.02 2.57995 22 3.46994 22 4.66994Z"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 5.48999V20.49"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M19 2.78003V8L17 6.66998L15 8V3.91998C16.31 3.39998 17.77 2.98003 19 2.78003Z"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+          </svg>
+          Education
+        </h1>
+        <div
+          class="d-flex flex-md-row flex-column-reverse container-fluid align-items-center justify-content-center gap-4 pb-5"
+        >
+          <div
+            class="p-md-5 p-4 w-100 shadow"
+            style="
+              text-indent: 2rem;
+              background-color: white;
+              border-radius: 1rem;
+            "
+          >
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem,
+            incidunt at sint voluptates, nisi hic quia, doloribus in et magnam
+            velit. Velit itaque libero ducimus quasi ipsum placeat! Vitae,
+            velit! Assumenda voluptatibus ipsam molestias itaque. Quae deleniti
+            maiores accusantium a culpa iste. Dolore ipsa deserunt nemo natus,
+            facilis, autem blanditiis, quaerat neque id odio harum! Perferendis
+            nihil asperiores expedita architecto! Soluta nihil aperiam facere,
+            labore eos iusto beatae consequatur, molestias sapiente in quibusdam
+            ex debitis earum perspiciatis veritatis excepturi! Culpa et vitae
+            eligendi esse ea ipsam laborum modi necessitatibus nemo. Nam, veniam
+            accusantium sint distinctio officia odit natus! Consequuntur maiores
+            dolores nemo ullam quia quae officiis sit natus possimus
+            repudiandae, inventore, quod consectetur at voluptatum sapiente quos
+            eveniet laboriosam esse.
+          </div>
+          <div class="p-md-5">
+            <img
+              src="https://sv1.picz.in.th/images/2023/02/06/LRC1RV.jpg"
+              class="about-prof shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Work-->
+    <span id="work" class="anchor"></span>
+    <div id="work" class="container-fluid" style="background-color: #03001c">
+      <div class="container">
+        <h1 class="text-center fw-bold text-white about-header">
+          <img
+            src="https://static.thenounproject.com/png/1090559-200.png"
+            class="work-logo"
+          />
+          Work
+        </h1>
+        <div
+          class="d-flex flex-column container-fluid align-items-center justify-content-center gap-4 pb-5"
+        >
+          <div class="p-md-5">
+            <a href="https://athenadefence.ai/" target="_blank">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/600511d43753c24df2471d75/1611027766295-D2TW00OGM8UTIKEE8XKB/Athena_logo_Artboards-17.png?format=1500w"
+                style="filter: invert(1) grayscale(1); width: 15rem"
+              />
+            </a>
+          </div>
+          <div class="p-md-5 p-4 w-100 shadow text-center text-white">
+            <h3>Part-Time Front-end Developer at</h3>
+            <h3 class="fw-bold" style="color: #b6eada">ATHENA AI</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Project-->
+    <span id="project" class="anchor"></span>
+    <div id="project" class="container-fluid box-light">
+      <div class="layout-light container">
+        <h1 class="text-center fw-bold pb-5 pt-5">
+          <svg
+            style="width: 3rem; height: 3rem"
+            viewBox="0 0 512 512"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            fill="#000000"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>project</title>
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g
+                  id="Combined-Shape"
+                  fill="#000000"
+                  transform="translate(64.000000, 34.346667)"
+                >
+                  <path
+                    d="M192,7.10542736e-15 L384,110.851252 L384,332.553755 L192,443.405007 L1.42108547e-14,332.553755 L1.42108547e-14,110.851252 L192,7.10542736e-15 Z M42.666,157.654 L42.6666667,307.920144 L170.666,381.82 L170.666,231.555 L42.666,157.654 Z M341.333,157.655 L213.333,231.555 L213.333,381.82 L341.333333,307.920144 L341.333,157.655 Z M192,49.267223 L66.1333333,121.936377 L192,194.605531 L317.866667,121.936377 L192,49.267223 Z"
+                  ></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+          Project
+        </h1>
+        <div class="container px-md-5 px-0 py-3">
+          <div class="row row-cols-md-2 row-cols-1 g-5">
+            <div class="col">
+              <div class="project-card shadow p-4 text-center">
+                <h2 class="pb-2">CE Boost Up X</h2>
+                <a
+                  href="https://github.com/Bourbxn/ce-boostup-x-front"
+                  target="_blank"
+                >
+                  <svg
+                    class="proj-git"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="3rem"
+                    height="3rem"
+                    fill="currentColor"
+                    class="bi bi-github"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="project-card shadow p-4 text-center">
+                <h2 class="pb-2">Binary Quiz</h2>
+                <div class="d-flex justify-content-center gap-3">
+                  <a
+                    href="https://bourbxn.github.io/binary-quiz/lab8"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/1024px-Globe_icon.svg.png"
+                      style="width: 3rem; height: 3rem"
+                      class="proj-web"
+                    />
+                  </a>
+                  <a
+                    href="https://github.com/Bourbxn/binary-quiz-web"
+                    target="_blank"
+                  >
+                    <svg
+                      class="proj-git"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="3rem"
+                      height="3rem"
+                      fill="currentColor"
+                      class="bi bi-github"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="project-card shadow p-4 text-center">
+                <h2 class="pb-2">Covid-19 Checkpoint</h2>
+                <a
+                  href="https://github.com/Bourbxn/oop-javafx-project"
+                  target="_blank"
+                >
+                  <svg
+                    class="proj-git"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="3rem"
+                    height="3rem"
+                    fill="currentColor"
+                    class="bi bi-github"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="project-card shadow p-4 text-center">
+                <h2 class="pb-2">Petrol Prediction</h2>
+                <div class="d-flex justify-content-center gap-3">
+                  <a
+                    href="https://bourbxn-linear-project-app-z56a17.streamlit.app/"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/1024px-Globe_icon.svg.png"
+                      style="width: 3rem; height: 3rem"
+                      class="proj-web"
+                    />
+                  </a>
+                  <a
+                    href="https://github.com/Bourbxn/linear-project"
+                    target="_blank"
+                  >
+                    <svg
+                      class="proj-git"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="3rem"
+                      height="3rem"
+                      fill="currentColor"
+                      class="bi bi-github"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="project-card shadow p-4 text-center">
+                <h2 class="pb-2">Curse Generator</h2>
+                <a
+                  href="https://github.com/Bourbxn/spa-web-project"
+                  target="_blank"
+                >
+                  <svg
+                    class="proj-git"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="3rem"
+                    height="3rem"
+                    fill="currentColor"
+                    class="bi bi-github"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="project-card shadow p-4 text-center">
+                <h2 class="pb-2">FastAPI Jinja Model</h2>
+                <a
+                  href="https://github.com/Bourbxn/fastapi-jinja-model"
+                  target="_blank"
+                >
+                  <svg
+                    class="proj-git"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="3rem"
+                    height="3rem"
+                    fill="currentColor"
+                    class="bi bi-github"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Experience-->
+    <span id="experience" class="anchor"></span>
+    <div
+      id="experience"
+      class="container-fluid"
+      style="background-color: #03001c"
+    >
+      <div class="container">
+        <h1 class="text-center fw-bold text-white about-header">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Folder_open_alt_font_awesome.svg/512px-Folder_open_alt_font_awesome.svg.png"
+            class="work-logo"
+          />
+          Experience
+        </h1>
+        <div
+          class="d-flex flex-column container-fluid align-items-center justify-content-center gap-4 pb-5"
+        >
+          <div class="p-md-5">
+            <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+            >
+              <svg
+                class="svg-icon"
+                style="
+                  width: 15rem;
+                  height: 15rem;
+                  vertical-align: middle;
+                  fill: #301e67;
+                  overflow: hidden;
+                "
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1014.643493 822.632271c0 0 0 0-0.020479 0l-310.629747-310.629747 310.629747-310.629747c0 0 0 0 0.020479 0 3.338123-3.338123 5.754678-7.249666 7.311104-11.40696 4.239211-11.366001 1.822656-24.677535-7.331583-33.831774l-146.734054-146.734054c-9.154239-9.154239-22.445293-11.570794-33.831774-7.311104-4.157294 1.556425-8.068837 3.972981-11.427439 7.311104 0 0 0 0 0 0l-310.629747 310.650226-310.629747-310.629747c0 0 0 0 0 0-3.338123-3.338123-7.249666-5.754678-11.40696-7.311104-11.386481-4.239211-24.677535-1.822656-33.831774 7.311104l-146.734054 146.734054c-9.154239 9.154239-11.570794 22.445293-7.331583 33.831774 1.556425 4.157294 3.972981 8.068837 7.311104 11.40696 0 0 0 0 0 0l310.629747 310.629747-310.629747 310.650226c0 0 0 0 0 0-3.338123 3.338123-5.754678 7.249666-7.311104 11.40696-4.239211 11.366001-1.822656 24.677535 7.331583 33.831774l146.734054 146.734054c9.154239 9.154239 22.445293 11.570794 33.831774 7.331583 4.157294-1.556425 8.068837-3.972981 11.40696-7.311104 0 0 0 0 0 0l310.629747-310.629747 310.629747 310.629747c0 0 0 0 0.020479 0 3.338123 3.338123 7.249666 5.754678 11.40696 7.311104 11.386481 4.239211 24.677535 1.822656 33.831774-7.331583l146.734054-146.734054c9.154239-9.154239 11.570794-22.445293 7.331583-33.831774-1.556425-4.157294-3.972981-8.068837-7.311104-11.40696z"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="p-md-5 p-4 w-100 shadow text-center text-white">
+            <h3>
+              Now,&nbspI am working at first company
+              <span style="color: #b6eada">&nbspATHENA AI</span>.
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Footer-->
+    <span id="contact" class="anchor"></span>
+    <footer class="footer text-white">
+      <div class="d-flex justify-content-center gap-3 pb-5">
+        <a href="https://github.com/Bourbxn" target="_blank">
+          <svg
+          style="fill: white;"
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            ></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            style="fill: white;"
+          >
+            <path
+              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+            ></path>
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100002332331426" target="_blank"
+          ><svg
+            fill="#ffffff"
+            width="2.2rem"
+            height="2.2rem"
+            viewBox="0 0 32 32"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#ffffff"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <g id="SVGRepo_iconCarrier">
+              <title>facebook</title>
+              <path
+                d="M30.996 16.091c-0.001-8.281-6.714-14.994-14.996-14.994s-14.996 6.714-14.996 14.996c0 7.455 5.44 13.639 12.566 14.8l0.086 0.012v-10.478h-3.808v-4.336h3.808v-3.302c-0.019-0.167-0.029-0.361-0.029-0.557 0-2.923 2.37-5.293 5.293-5.293 0.141 0 0.281 0.006 0.42 0.016l-0.018-0.001c1.199 0.017 2.359 0.123 3.491 0.312l-0.134-0.019v3.69h-1.892c-0.086-0.012-0.185-0.019-0.285-0.019-1.197 0-2.168 0.97-2.168 2.168 0 0.068 0.003 0.135 0.009 0.202l-0.001-0.009v2.812h4.159l-0.665 4.336h-3.494v10.478c7.213-1.174 12.653-7.359 12.654-14.814v-0z"
+              />
+            </g>
+          </svg>
+        </a>
+        <a href="https://instagram.com/jakkapatt_?igshid=YmMyMTA2M2Y=" target="_blank">
+          <svg
+            fill="#ffffff"
+            width="2.2rem"
+            height="2.2rem"
+            viewBox="0 0 32 32"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#ffffff"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <g id="SVGRepo_iconCarrier">
+              <title>instagram</title>
+              <path
+                d="M25.805 7.996c0 0 0 0.001 0 0.001 0 0.994-0.806 1.799-1.799 1.799s-1.799-0.806-1.799-1.799c0-0.994 0.806-1.799 1.799-1.799v0c0.993 0.001 1.798 0.805 1.799 1.798v0zM16 20.999c-2.761 0-4.999-2.238-4.999-4.999s2.238-4.999 4.999-4.999c2.761 0 4.999 2.238 4.999 4.999v0c0 0 0 0.001 0 0.001 0 2.76-2.237 4.997-4.997 4.997-0 0-0.001 0-0.001 0h0zM16 8.3c0 0 0 0-0 0-4.253 0-7.7 3.448-7.7 7.7s3.448 7.7 7.7 7.7c4.253 0 7.7-3.448 7.7-7.7v0c0-0 0-0 0-0.001 0-4.252-3.447-7.7-7.7-7.7-0 0-0 0-0.001 0h0zM16 3.704c4.003 0 4.48 0.020 6.061 0.089 1.003 0.012 1.957 0.202 2.84 0.538l-0.057-0.019c1.314 0.512 2.334 1.532 2.835 2.812l0.012 0.034c0.316 0.826 0.504 1.781 0.516 2.778l0 0.005c0.071 1.582 0.087 2.057 0.087 6.061s-0.019 4.48-0.092 6.061c-0.019 1.004-0.21 1.958-0.545 2.841l0.019-0.058c-0.258 0.676-0.64 1.252-1.123 1.726l-0.001 0.001c-0.473 0.484-1.049 0.866-1.692 1.109l-0.032 0.011c-0.829 0.316-1.787 0.504-2.788 0.516l-0.005 0c-1.592 0.071-2.061 0.087-6.072 0.087-4.013 0-4.481-0.019-6.072-0.092-1.008-0.019-1.966-0.21-2.853-0.545l0.059 0.019c-0.676-0.254-1.252-0.637-1.722-1.122l-0.001-0.001c-0.489-0.47-0.873-1.047-1.114-1.693l-0.010-0.031c-0.315-0.828-0.506-1.785-0.525-2.785l-0-0.008c-0.056-1.575-0.076-2.061-0.076-6.053 0-3.994 0.020-4.481 0.076-6.075 0.019-1.007 0.209-1.964 0.544-2.85l-0.019 0.059c0.247-0.679 0.632-1.257 1.123-1.724l0.002-0.002c0.468-0.492 1.045-0.875 1.692-1.112l0.031-0.010c0.823-0.318 1.774-0.509 2.768-0.526l0.007-0c1.593-0.056 2.062-0.075 6.072-0.075zM16 1.004c-4.074 0-4.582 0.019-6.182 0.090-1.315 0.028-2.562 0.282-3.716 0.723l0.076-0.025c-1.040 0.397-1.926 0.986-2.656 1.728l-0.001 0.001c-0.745 0.73-1.333 1.617-1.713 2.607l-0.017 0.050c-0.416 1.078-0.67 2.326-0.697 3.628l-0 0.012c-0.075 1.6-0.090 2.108-0.090 6.182s0.019 4.582 0.090 6.182c0.028 1.315 0.282 2.562 0.723 3.716l-0.025-0.076c0.796 2.021 2.365 3.59 4.334 4.368l0.052 0.018c1.078 0.415 2.326 0.669 3.628 0.697l0.012 0c1.6 0.075 2.108 0.090 6.182 0.090s4.582-0.019 6.182-0.090c1.315-0.029 2.562-0.282 3.716-0.723l-0.076 0.026c2.021-0.796 3.59-2.365 4.368-4.334l0.018-0.052c0.416-1.078 0.669-2.326 0.697-3.628l0-0.012c0.075-1.6 0.090-2.108 0.090-6.182s-0.019-4.582-0.090-6.182c-0.029-1.315-0.282-2.562-0.723-3.716l0.026 0.076c-0.398-1.040-0.986-1.926-1.729-2.656l-0.001-0.001c-0.73-0.745-1.617-1.333-2.607-1.713l-0.050-0.017c-1.078-0.416-2.326-0.67-3.628-0.697l-0.012-0c-1.6-0.075-2.108-0.090-6.182-0.090z"
+              />
+            </g>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/watch?v=XbOxy21yYrA" target="_blank"
+          ><svg
+            fill="#ffffff"
+            width="2.2rem"
+            height="2.2rem"
+            viewBox="0 0 32 32"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#ffffff"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <g id="SVGRepo_iconCarrier">
+              <title>onlyfans</title>
+              <path
+                d="M16.165 17.236h0.038c0.007-0 0.016-0 0.025-0 0.95 0 1.721 0.77 1.721 1.721 0 0.726-0.449 1.347-1.085 1.599l-0.012 0.004h-0.107v1.445c0 0.001 0 0.002 0 0.003 0 0.221-0.115 0.416-0.288 0.527l-0.002 0.002h-0.639c-0.18-0.116-0.298-0.315-0.3-0.542v-1.434c-0.647-0.257-1.096-0.878-1.096-1.603 0-0.95 0.77-1.721 1.721-1.721 0.009 0 0.018 0 0.027 0l-0.001-0zM15.585 10.743h1.006c0.853 0.003 1.626 0.348 2.187 0.905l-0-0c0.561 0.546 0.91 1.308 0.912 2.151v0l0.004 1.262h-7.21v-1.262c0.002-0.844 0.351-1.606 0.912-2.151l0.001-0.001c0.562-0.557 1.334-0.903 2.188-0.906h0.001zM15.585 8.281c-0.001 0-0.002 0-0.004 0-1.54 0-2.936 0.62-3.951 1.624l0.001-0.001c-1.016 0.986-1.646 2.365-1.646 3.89 0 0.002 0 0.003 0 0.005v-0 1.223l-0.695 1.253v1.804c0.003 1.696 0.703 3.228 1.829 4.325l0.001 0.001c1.133 1.113 2.688 1.799 4.403 1.799 0.003 0 0.006 0 0.008 0h1.119c1.714-0 3.267-0.687 4.4-1.8l-0.001 0.001c1.129-1.097 1.831-2.63 1.833-4.326v-1.806l-0.687-1.253v-1.225c-0.002-1.527-0.633-2.906-1.648-3.893l-0.001-0.001c-1.014-1.003-2.41-1.623-3.95-1.623-0.002 0-0.004 0-0.006 0h0zM15.985 2.574c0.001 0 0.002 0 0.003 0 7.415 0 13.427 6.011 13.427 13.427s-6.011 13.427-13.427 13.427c-7.415 0-13.427-6.011-13.427-13.427 0-0.002 0-0.003 0-0.005v0c0-0.001 0-0.001 0-0.002 0-7.412 6.009-13.421 13.421-13.421 0.001 0 0.002 0 0.003 0h-0zM16 1.004c0 0 0 0-0 0-8.282 0-14.996 6.714-14.996 14.996s6.714 14.996 14.996 14.996c8.282 0 14.996-6.714 14.996-14.996v0c-0-8.282-6.714-14.995-14.996-14.996h-0z"
+              />
+            </g>
+          </svg>
+        </a>
+      </div>
+      <div class="container text-center pb-3" style="width: 12rem">
+          <a href="#" class="footer-link">Home</a>
+          <span class="footer-point">•</span>
+          <a href="#about" class="footer-link">About</a>
+          <span class="footer-point">•</span>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#education" class="footer-link">Education</a>
+          <span class="footer-point">•</span>
+          <a href="#work" class="footer-link">Work</a>
+          <a href="#project" class="footer-link">Project</a>
+          <span class="footer-point">•</span>
+          <a href="#experience" class="footer-link">Experience</a>
+        </div>
+      </div>
+      <p class="text-center" style="opacity: 40%;">
+        Copyright © Jakkapat Paijit</p>
+    </footer>
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
