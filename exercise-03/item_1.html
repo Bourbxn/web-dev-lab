@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <style>
     html::-webkit-scrollbar {
       display: none;
@@ -15,6 +16,11 @@
 
     html {
       scrollbar-width: none;
+      overflow: visible;
+    }
+
+    body {
+      font-family: Lato;
     }
 
     nav {
@@ -236,7 +242,7 @@
       opacity: 50%;
     }
 
-    @media (max-width: 768px) {
+    @media only screen and (max-width: 768px) {
       .navbar-collapse {
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -266,66 +272,76 @@
   </style>
   <title>Bourbxn - Personal Website</title>
 </head>
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid nav">
+      <a class="navbar-brand nav-logo" href="#">
+        <svg fill="#000000" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" style="fill: white; width: 1.8rem; height: 1.8rem; margin-bottom: 0.5rem;">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M6 5 A 1.0001 1.0001 0 0 0 5.0058594 6.1054688L8.8183594 42.314453C8.9779516 43.832817 10.273526 45 11.800781 45L38.199219 45C39.726474 45 41.024002 43.832817 41.183594 42.314453L44.994141 6.1054688 A 1.0001 1.0001 0 0 0 44 5L6 5 z M 7.1113281 7L42.888672 7L40.189453 32.654297L40.189453 32.589844C39.879453 35.579844 36.94 38 33 38L25 38L17 38C13.06 38 10.120547 35.579844 9.8105469 32.589844L9.8105469 32.640625L7.1113281 7 z M 28.978516 20.9375 A 1.0001 1.0001 0 0 0 28.054688 21.544922L26.144531 26L24 26L24 23 A 1.0001 1.0001 0 0 0 23 22L15 22 A 1.0001 1.0001 0 0 0 14 23L14 26L11.119141 26L11.800781 32.410156C12.010781 34.460156 14.25 36 17 36L33 36C35.75 36 37.989219 34.460156 38.199219 32.410156L38.880859 26L36.710938 26L36.980469 25.369141 A 1.0001 1.0001 0 0 0 36.455078 24.056641L29.367188 21.019531 A 1.0001 1.0001 0 0 0 28.978516 20.9375 z M 29.5 23.251953L34.748047 25.5L32.498047 30.75L27.25 28.5L29.5 23.251953 z M 16 24L22 24L22 30L16 30L16 24 z">
+            </path>
+          </g>
+        </svg>&nbspBourbxn</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <svg width="31px" height="31px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          stroke="#000000">
+          <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+
+          <g id="SVGRepo_iconCarrier">
+            <g clip-path="url(#clip0_429_11066)">
+              <path d="M3 6.00092H21M3 12.0009H21M3 18.0009H21" stroke="#ffffff" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_429_11066">
+                <rect width="24" height="24" fill="white" transform="translate(0 0.000915527)" />
+              </clipPath>
+            </defs>
+          </g>
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#work">Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#project">Project</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <span class="nav-span"></span>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid nav">
-        <a class="navbar-brand nav-logo" href="#">Bourbxn</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <svg class="nav-hamb" width="31px" height="31px" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg" stroke="#000000">
-            <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-
-            <g id="SVGRepo_iconCarrier">
-              <g clip-path="url(#clip0_429_11066)">
-                <path d="M3 6.00092H21M3 12.0009H21M3 18.0009H21" stroke="#ffffff" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </g>
-              <defs>
-                <clipPath id="clip0_429_11066">
-                  <rect width="24" height="24" fill="white" transform="translate(0 0.000915527)" />
-                </clipPath>
-              </defs>
-            </g>
-          </svg>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#education">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#work">Work</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#project">Project</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-            <span class="nav-span"></span>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
   <!--Home-->
   <div class="px-4 hero d-flex align-items-center justify-content-center layout-dark">
     <div class="page-header text-center">
@@ -385,7 +401,7 @@
   </div>
   <!--About Me-->
   <span id="about" class="anchor"></span>
-  <div id="about" class="container-fluid" style="background-color: #e5e7ea">
+  <div id="about" class="container-fluid" style="background-color: #e5e7ea; overflow-x: hidden;">
     <div class="layout-light container">
       <h1 class="text-center fw-bold about-header">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-fill"
@@ -395,8 +411,9 @@
         About Me
       </h1>
       <div class="d-flex flex-lg-row flex-column container-fluid align-items-center justify-content-center gap-4 pb-5">
-        <div class="p-md-5" data-aos="fade-right">
-          <img src="https://sv1.picz.in.th/images/2023/02/05/LRxiBz.jpg" class="about-prof shadow" />
+        <div class="p-md-5">
+          <img src="https://sv1.picz.in.th/images/2023/02/05/LRxiBz.jpg" class="about-prof shadow"
+            data-aos="fade-right" />
         </div>
         <div class="p-md-5 p-4 w-100 shadow" style="
               text-indent: 2rem;
@@ -516,7 +533,7 @@
   </div>
   <!--Education-->
   <span id="education" class="anchor"></span>
-  <div id="education" class="container-fluid" style="background-color: #e5e7ea">
+  <div id="education" class="container-fluid" style="background-color: #e5e7ea; overflow-x: hidden;">
     <div class="layout-light container">
       <h1 class="text-center fw-bold about-header">
         <svg width="3rem" height="3rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -558,8 +575,9 @@
           repudiandae, inventore, quod consectetur at voluptatum sapiente quos
           eveniet laboriosam esse.
         </div>
-        <div class="p-md-5" data-aos="fade-left">
-          <img src="https://sv1.picz.in.th/images/2023/02/06/LRC1RV.jpg" class="about-prof shadow" />
+        <div class="p-md-5">
+          <img src="https://sv1.picz.in.th/images/2023/02/06/LRC1RV.jpg" class="about-prof shadow"
+            data-aos="fade-left" />
         </div>
       </div>
     </div>
@@ -573,7 +591,7 @@
         Work
       </h1>
       <div class="d-flex flex-column container-fluid align-items-center justify-content-center gap-4 pb-5">
-        <div class="p-md-5" data-aos="zoom-out">
+        <div class="p-md-5" data-aos="zoom-out-down">
           <a href="https://athenadefence.ai/" target="_blank">
             <img
               src="https://images.squarespace-cdn.com/content/v1/600511d43753c24df2471d75/1611027766295-D2TW00OGM8UTIKEE8XKB/Athena_logo_Artboards-17.png?format=1500w"
@@ -611,8 +629,8 @@
       </h1>
       <div class="container px-md-5 px-0 py-3">
         <div class="row row-cols-md-2 row-cols-1 g-5">
-          <div class="col" data-aos="zoom-in">
-            <div class="project-card shadow p-4 text-center">
+          <div class="col">
+            <div class="project-card shadow p-4 text-center" data-aos="zoom-in-down">
               <h2 class="pb-2">CE Boost Up X</h2>
               <a href="https://github.com/Bourbxn/ce-boostup-x-front" target="_blank">
                 <svg class="proj-git" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor"
@@ -624,8 +642,8 @@
               </a>
             </div>
           </div>
-          <div class="col" data-aos="zoom-in">
-            <div class="project-card shadow p-4 text-center">
+          <div class="col">
+            <div class="project-card shadow p-4 text-center" data-aos="zoom-in-down">
               <h2 class="pb-2">Binary Quiz</h2>
               <div class="d-flex justify-content-center gap-3">
                 <a href="https://bourbxn.github.io/binary-quiz/lab8" target="_blank">
@@ -644,8 +662,8 @@
               </div>
             </div>
           </div>
-          <div class="col" data-aos="zoom-in">
-            <div class="project-card shadow p-4 text-center">
+          <div class="col">
+            <div class="project-card shadow p-4 text-center" data-aos="zoom-in-down">
               <h2 class="pb-2">Covid-19 Checkpoint</h2>
               <a href="https://github.com/Bourbxn/oop-javafx-project" target="_blank">
                 <svg class="proj-git" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor"
@@ -657,8 +675,8 @@
               </a>
             </div>
           </div>
-          <div class="col" data-aos="zoom-in">
-            <div class="project-card shadow p-4 text-center">
+          <div class="col">
+            <div class="project-card shadow p-4 text-center" data-aos="zoom-in-down">
               <h2 class="pb-2">Petrol Prediction</h2>
               <div class="d-flex justify-content-center gap-3">
                 <a href="https://bourbxn-linear-project-app-z56a17.streamlit.app/" target="_blank">
@@ -677,8 +695,8 @@
               </div>
             </div>
           </div>
-          <div class="col" data-aos="zoom-in">
-            <div class="project-card shadow p-4 text-center">
+          <div class="col">
+            <div class="project-card shadow p-4 text-center" data-aos="zoom-in-down">
               <h2 class="pb-2">Curse Generator</h2>
               <a href="https://github.com/Bourbxn/spa-web-project" target="_blank">
                 <svg class="proj-git" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor"
@@ -690,8 +708,8 @@
               </a>
             </div>
           </div>
-          <div class="col" data-aos="zoom-in">
-            <div class="project-card shadow p-4 text-center">
+          <div class="col">
+            <div class="project-card shadow p-4 text-center" data-aos="zoom-in-down">
               <h2 class="pb-2">FastAPI Jinja Model</h2>
               <a href="https://github.com/Bourbxn/fastapi-jinja-model" target="_blank">
                 <svg class="proj-git" xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor"
@@ -718,7 +736,7 @@
         Experience
       </h1>
       <div class="d-flex flex-column container-fluid align-items-center justify-content-center gap-4 pb-5">
-        <div class="p-md-5" data-aos="zoom-in-down">
+        <div class="p-md-5" data-aos="zoom-out">
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
             <svg class="svg-icon" style="
                   width: 15rem;
@@ -825,8 +843,9 @@
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  AOS.init();
   AOS.init({
-    duration: 500,
+    duration: 800,
   });
 </script>
 
