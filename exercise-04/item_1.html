@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div id="maincontainer"></div>
+    <script>
+      const id = "maincontainer";
+      let infoToggle = false;
+
+      header = () => {
+        const h2 = document.createElement("h2");
+        const header = document.createTextNode("Exercise 04: Javascript&DOM");
+        h2.appendChild(header);
+        document.getElementById(id).appendChild(h2);
+      };
+
+      dateButton = () => {
+        const btn = document.createElement("button");
+        const text = document.createTextNode(
+          "Click me to display Date and Time."
+        );
+        btn.id = "date";
+        btn.style.cursor = "pointer";
+        btn.onclick = () => {
+          webWorker();
+        };
+        btn.appendChild(text);
+        document.getElementById(id).appendChild(btn);
+      };
+
+      let worker = null;
+      let status = false;
+
+      webWorker = () => {
+        const button = document.getElementById("date");
+        if (!status) {
+          worker = new Worker("./item_1_worker.js");
+          worker.onmessage = (event) => {
+            button.style.position = "fixed";
+            button.style.top = 0;
+            button.style.right = 0;
+            button.style.backgroundColor =
+              "#" + Math.floor(Math.random() * 16777215).toString(16);
+            button.style.color =
+              "#" + Math.floor(Math.random() * 16777215).toString(16);
+            button.innerText = event.data;
+            status = true;
+          };
+        } else {
+          status = false;
+          worker.terminate();
+          button.style.position = null;
+        }
+      };
+
+      personalInfo = () => {
+        const allList = [
+          "Jakkapat Paijit, ID: 64010090",
+          "Subject: Web Application Development",
+          "Semester: 2",
+        ];
+        let liList = [];
+        let css =
+          "#infoTopic{color:pink; width:fit-content; text-decoration: underline;} #infoTopic:hover{color:blue; background-color:yellow }";
+        let style = document.createElement("style");
+        const div = document.createElement("div");
+        div.style.paddingTop = "1rem";
+        const p = document.createElement("p");
+        p.id = "infoTopic";
+        p.style.cursor = "pointer";
+        if (style.styleSheet) {
+          style.styleSheet.cssText = css;
+        } else {
+          style.appendChild(document.createTextNode(css));
+        }
+        p.appendChild(style);
+        const topic = document.createTextNode("Personal Info");
+        const ul = document.createElement("ul");
+        ul.style.display = "none";
+        p.onclick = () => {
+          infoToggle = !infoToggle;
+          if (infoToggle) {
+            ul.style.display = "block";
+          } else {
+            ul.style.display = "none";
+          }
+        };
+        allList.map((i) => {
+          const li = document.createElement("li");
+          const span = document.createElement("span");
+          const text = document.createTextNode(i);
+          span.appendChild(text);
+          li.appendChild(span);
+          liList.push(li);
+        });
+        liList.map((li) => {
+          ul.appendChild(li);
+        });
+        p.appendChild(topic);
+        div.appendChild(p);
+        div.appendChild(ul);
+        document.getElementById(id).appendChild(div);
+      };
+
+      snapshots = () => {
+        let allList1 = ["asdf", "adsfads", "sadfasdf"];
+        let allList = [
+          {
+            name: "Fireworks",
+            src: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/78b2c021-5c53-4a18-8f9b-8654235cdf59/d91ast9-b20f6bbc-ce5a-407a-bfd1-78abc8db8ad9.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzc4YjJjMDIxLTVjNTMtNGExOC04ZjliLTg2NTQyMzVjZGY1OVwvZDkxYXN0OS1iMjBmNmJiYy1jZTVhLTQwN2EtYmZkMS03OGFiYzhkYjhhZDkuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.nPAziETOG76rpOJ2R-DrF3ZVmJntQLhUXvyrDVgusr8",
+          },
+          {
+            name: "Crest",
+            src: "http://t2.gstatic.com/images?q=tbn:ANd9GcTjB7Y4VYw5Rw7zjRXVPzGylGKeQ-NLlvLcIEP6bDuNBePJefrJ",
+          },
+          {
+            name: "Action",
+            src: "https://memesbams.com/wp-content/uploads/2017/09/funny-baseball-memes.jpg",
+          },
+          {
+            name: "Buffalo",
+            src: "https://i.kym-cdn.com/photos/images/original/001/515/586/e71.jpeg",
+          },
+        ];
+        let liList = [];
+        const div = document.createElement("div");
+        const h1 = document.createElement("h1");
+        const topic = document.createTextNode("Snapshots");
+        const ul = document.createElement("ul");
+        const img = document.createElement("img");
+        img.src =
+          "https://scontent.fbkk5-5.fna.fbcdn.net/v/t39.30808-6/297283850_5367962686597930_4237137743468903702_n.png?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=3kJvJVqB1jkAX9YT4NO&_nc_oc=AQkkUS2FTq3LBMZ66Gt9LsB4CDBrslSYgOu0JhIYL8rBoPYe07t_5VM0ALmtwZ-7EmI&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfDeb9i1FewIXQhaqrShq9DAliBrZaWgK-ViNldr46Y1rg&oe=63F2841E";
+        img.style.width = "500px";
+        allList.map((i) => {
+          const li = document.createElement("li");
+          const span = document.createElement("span");
+          span.style.cursor = "pointer";
+          span.style.textDecoration = "underline";
+          span.style.color = "blue";
+          li.onclick = () => {
+            img.src = i.src;
+          };
+          const text = document.createTextNode(i.name);
+          span.appendChild(text);
+          li.appendChild(span);
+          liList.push(li);
+        });
+        liList.map((li) => {
+          ul.appendChild(li);
+        });
+        h1.appendChild(topic);
+        div.appendChild(h1);
+        div.appendChild(ul);
+        div.appendChild(img);
+        document.getElementById(id).appendChild(div);
+      };
+
+      header();
+      dateButton();
+      personalInfo();
+      snapshots();
+    </script>
+  </body>
+</html>
