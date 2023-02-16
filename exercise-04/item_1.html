@@ -6,6 +6,10 @@
     <script>
       const id = "maincontainer";
       let infoToggle = false;
+      let worker;
+      let dateActive = false;
+      let countColor = 0;
+      let dateColor = ["black", "red", "maroon", "purple", "navy", "olive"];
 
       header = () => {
         const h2 = document.createElement("h2");
@@ -28,26 +32,24 @@
         document.getElementById(id).appendChild(btn);
       };
 
-      let worker = null;
-      let status = false;
-
       webWorker = () => {
+        dateActive = !dateActive
         const button = document.getElementById("date");
-        if (!status) {
-          worker = new Worker("./item_1_worker.js");
+        if (dateActive) {
+          worker = new Worker("item_1_worker.js");
           worker.onmessage = (event) => {
             button.style.position = "fixed";
             button.style.top = 0;
             button.style.right = 0;
-            button.style.backgroundColor =
-              "#" + Math.floor(Math.random() * 16777215).toString(16);
-            button.style.color =
-              "#" + Math.floor(Math.random() * 16777215).toString(16);
+            button.style.backgroundColor = dateColor[countColor++];
+            button.style.color = "white";
+            button.style.border = "solid black 2px"
             button.innerText = event.data;
-            status = true;
+            if (countColor > 6) {
+              countColor = 0;
+            }
           };
         } else {
-          status = false;
           worker.terminate();
           button.style.position = null;
         }
@@ -103,7 +105,6 @@
       };
 
       snapshots = () => {
-        let allList1 = ["asdf", "adsfads", "sadfasdf"];
         let allList = [
           {
             name: "Fireworks",
