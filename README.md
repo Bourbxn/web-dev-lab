@@ -17,4 +17,6 @@ Web Application Development (01076119) Computer Engineering, KMITL<br>
 + <a href="https://www.youtube.com/watch?v=2zQhqmFHnWI">Exercise 4 (Javascript & DOM)<a/>
   - <a href="./exercise-04/item_1.html">item 1 (HTML)<a/>
   - <a href="./exercise-04/item_1.html">item 1 (Javascript)<a/>
++ <a href="https://www.youtube.com/watch?v=OzSOfKtENBo">Exercise 5 (React)<a/>
+  - <a href="./exercise-05/src/">item 1<a/>
 + Coming soon...
