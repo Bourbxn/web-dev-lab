@@ -21,7 +21,7 @@ const FoodBox = ({ type, food, detail, imgSrc }) => {
   };
 
   return (
-    <div className="md:w-3/5 min-h-[24rem] bg-orange-100 rounded-xl p-6 border-black border-[3px] flex flex-col justify-between gap-y-5">
+    <div className="lg:w-3/5 min-h-[24rem] bg-[#fcefdb] rounded-xl p-6 border-black border-[3px] flex flex-col justify-between gap-y-5">
       <div className="flex md:flex-row flex-col-reverse justify-between items-start">
         <div>
           <h2 className="text-3xl font-bold md:py-6 py-3">{type}</h2>
@@ -34,7 +34,7 @@ const FoodBox = ({ type, food, detail, imgSrc }) => {
       </div>
       <div className="flex md:flex-row flex-col justify-center items-center gap-4 md:pt-0">
         <VoteBtn onVote={getVote} />
-        <h4 className="bg-lime-400 text-2xl font-bold rounded-lg p-3 text-violet-600 border-black border-[3px] ">
+        <h4 className="bg-[#83e600] text-2xl font-bold rounded-lg p-3 text-[#904ade] border-black border-[3px] ">
           {voted === 0 && <div>MIN</div>}
           {voted > 0 && voted < 10 && <div>{voted}</div>}
           {voted === 10 && <div>MAX</div>}
