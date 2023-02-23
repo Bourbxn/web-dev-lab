@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import VoteBtn from "./VoteBtn";
-import UnvoteBtn from "./UnvoteBtn";
 
 const FoodBox = ({ type, food, detail, imgSrc }) => {
   let [voted, setVoted] = useState(0);
   const getVote = () => {
     if (voted > 9) {
-      window.alert();
+      window.alert("Cannot Vote more");
     } else {
       setVoted(voted + 1);
     }
@@ -33,13 +32,13 @@ const FoodBox = ({ type, food, detail, imgSrc }) => {
         </div>
       </div>
       <div className="flex md:flex-row flex-col justify-center items-center gap-4 md:pt-0">
-        <VoteBtn onVote={getVote} />
+        <VoteBtn text={"Click to vote"} onVote={getVote} />
         <h4 className="bg-[#83e600] text-2xl font-bold rounded-lg p-3 text-[#904ade] border-black border-[3px] ">
           {voted === 0 && <div>MIN</div>}
           {voted > 0 && voted < 10 && <div>{voted}</div>}
           {voted === 10 && <div>MAX</div>}
         </h4>
-        <UnvoteBtn onUnvote={getUnvote} />
+        <VoteBtn text={"Click to Unvote"} onVote={getUnvote} />
       </div>
     </div>
   );
