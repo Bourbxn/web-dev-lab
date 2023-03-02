@@ -8,7 +8,7 @@ const VoteBtn = (props) => {
 
   return (
     <button
-      className="bg-[#f2f0f3] p-2 rounded border-gray-600 border-[1px]"
+      className="bg-[#f2f0f3] p-2 rounded border-gray-600 border-[1px] hover:bg-[#e0e0e0]"
       onClick={handleVote}
     >
       {props.text}

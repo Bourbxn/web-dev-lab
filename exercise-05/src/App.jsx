@@ -8,9 +8,9 @@ function App() {
         โหวตอาหาร
       </h1>
       <div className="flex flex-col justify-center items-center pt-12">
-        {foodArr.map((item) => (
+        {foodArr.map((item, key) => (
           <FoodBox
-            key={item.key}
+            key={key}
             type={item.type}
             food={item.food}
             detail={item.detail}
